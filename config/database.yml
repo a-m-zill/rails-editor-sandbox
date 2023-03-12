@@ -1,0 +1,27 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: editor_sandbox_development
+  username: <%= ENV['WEBAPP_DATABASE_USER'] %>
+  password: <%= ENV['WEBAPP_DATABASE_PASSWORD'] %>
+  host: 127.0.0.1
+  port: 5432
+
+test:
+  <<: *default
+  database: editor_sandbox_test
+  username: <%= ENV['WEBAPP_DATABASE_USER'] %>
+  password: <%= ENV['WEBAPP_DATABASE_PASSWORD'] %>
+  host: 127.0.0.1
+
+production:
+  <<: *default
+  database: editor_sandbox_production
+  username: editor_sandbox
+  password: <%= ENV["EDITOR_SANDBOX_DATABASE_PASSWORD"] %>
