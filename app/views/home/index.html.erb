@@ -1,4 +1,30 @@
-<div>
-  <h1 class="font-bold text-4xl">Home#index</h1>
-  <p>Find me in app/views/home/index.html.erb</p>
+<div class="container content-end mb-6 text-right">
+  <%= link_to "Artikel bearbeiten", articles_path %>
+</div>
+
+<div class="container w-full">
+  <div class="relative">
+    <div class="absolute inset-0 flex items-center" aria-hidden="true">
+      <div class="w-full border-t border-gray-300"></div>
+    </div>
+    <div class="relative flex justify-center">
+      <span class="bg-white px-3 text-base font-semibold leading-6 text-gray-900">Artikel</span>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+<% @articles.each do |article| %>
+<div class="text-2xl mt-4">
+<%= article.title %>
+</div>
+<div class="text-base mt-4">
+  <%= article.intro %>
+</div>
+<div class="text-sm mt-3 text-right text-cyan-800 mb-3">
+  <%= link_to "Weiterlesen", article_path(article.id) %>
+</div>
+<hr/>
+<% end %>
 </div>

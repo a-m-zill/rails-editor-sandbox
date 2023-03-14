@@ -12,7 +12,11 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <header class="container mx-auto mt-10 px-5 flex justify-between">
+      <span class="text-2xl font-semibold">Editor-Sandbox</span>
+      <%= link_to "Home", root_path %>
+    </header>
+    <main class="container mx-auto mt-18 px-5">
       <%= yield %>
     </main>
   </body>

@@ -1,11 +1,13 @@
 <div id="<%= dom_id article %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
+  <p class="my-5 text-2xl">
     <%= article.title %>
   </p>
 
+  <p class="my-5 text-base ">
+    <%= article.intro %>
+  </p>
+
   <p class="my-5">
-    <strong class="block font-medium mb-1">Content:</strong>
     <div class="prose max-w-none">
     <%= article.content %>
     </div>
